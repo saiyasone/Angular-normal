@@ -1,0 +1,49 @@
+<div class="cart-page">
+  <main>
+    <ng-container *ngIf="cart.length; else emptyCart">
+      <ng-container *ngFor="let item of cart; let i = index">
+        <ul class="cart__item-list">
+          <li class="cart__item">
+            <div>
+              <img
+                [src]="item.productId.imageUrl"
+                [alt]="item.productId.title"
+              />
+              <div class="d-flex flex-column">
+                <h1>{{ item.productId._id }}</h1>
+                <h2>x {{ item.quantity | number }}</h2>
+              </div>
+            </div>
+
+            <button
+              (click)="onDelete(item)"
+              class="btn btn-danger"
+              type="button"
+            >
+              Delete
+            </button>
+          </li>
+        </ul>
+      </ng-container>
+      <div class="text-center mt-4">
+        <button (click)="onOrders()" class="btn btn-outline-primary">
+          <i class="me-1 fas fa-cart-shopping"></i> Order!
+        </button>
+      </div>
+    </ng-container>
+
+    <hr />
+    <ng-template #emptyCart>
+      <div class="text-center mt-4">
+        <button
+          (click)="onShopOrder()"
+          type="button"
+          class="btn btn-primary mb-2"
+        >
+          <i class="me-1 fas fa-shopping-cart"></i> Add Cart Now!
+        </button>
+        <h1>No Products in Cart!</h1>
+      </div>
+    </ng-template>
+  </main>
+</div>

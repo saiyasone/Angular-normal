@@ -1,0 +1,42 @@
+<div class="add-product">
+  <h2>{{ isCreate ? 'Edit' : 'Add' }} Product Express</h2>
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="form-label">Title</label>
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Title"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="form-label">Price</label>
+      <input
+        formControlName="price"
+        type="number"
+        placeholder="Price"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="form-label">Image Url</label>
+      <input (input)="pickFile($event)" type="file" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="form-label">Note</label>
+      <textarea
+        formControlName="note"
+        [rows]="5"
+        placeholder="Note"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div class="mt-2">
+      <button (click)="onSubmitForm()" type="button" class="btn btn-primary">
+        {{ isCreate ? 'Edit Product' : 'Add Product' }}
+      </button>
+    </div>
+  </form>
+</div>

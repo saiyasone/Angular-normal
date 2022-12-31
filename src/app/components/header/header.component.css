@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .nav-link {
+  cursor: pointer;
+  margin: 0 10px;
+  color: #ccc;
+}
+.header .navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+.header .nav-link.active {
+  color: #fff;
+}
+
+.header .sign .link {
+  color: #fff;
+}
+.header .sign .link.active {
+  color: #fff;
+}
+
+.nav-logout {
+  color: #ccc;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-logout:hover {
+  color: #fff;
+}

@@ -1,0 +1,53 @@
+<nav class="navbar bg-success">
+  <div class="container">
+    <div class="header">
+      <div class="navigate">
+        <!-- <a class="navbar-brand mr-3 text-light" routerLink="/">Express</a> -->
+        <div class="navbar-nav">
+          <a routerLink="/shop" class="nav-link me-3">
+            <i class="fas fa-store me-1"></i> Express</a
+          >
+          <a routerLink="/shop" class="nav-link" routerLinkActive="active"
+            >Shop</a
+          >
+          <a routerLink="/product" routerLinkActive="active" class="nav-link"
+            >Product</a
+          >
+
+          <ng-container *ngIf="isAuthenticated">
+            <a
+              routerLink="/add-product"
+              routerLinkActive="active"
+              class="nav-link"
+              >Add Product</a
+            >
+            <a routerLink="/cart" routerLinkActive="active" class="nav-link"
+              >Cart</a
+            >
+            <a routerLink="/order" routerLinkActive="active" class="nav-link"
+              >Orders</a
+            >
+            <a routerLink="/admin" routerLinkActive="active" class="nav-link"
+              >Admin</a
+            >
+          </ng-container>
+        </div>
+      </div>
+
+      <ng-container *ngIf="!isAuthenticated; else signOutTemp">
+        <div class="sign">
+          <a routerLink="/login" routerLinkActive="active" class="btn link me-2"
+            >Login</a
+          >
+          <a routerLink="/register" routerLinkActive="active" class="btn link"
+            >Register</a
+          >
+        </div>
+      </ng-container>
+
+      <ng-template #signOutTemp>
+        <a (click)="logout()" class="nav-logout">Logout</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

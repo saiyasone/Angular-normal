@@ -1,0 +1,28 @@
+<div class="orders">
+  <h2>Order Express</h2>
+
+  <section class="mt-4">
+    <ng-container *ngIf="orders.length; else orderEmpty">
+      <ng-container *ngFor="let order of orders">
+        <ng-container *ngFor="let item of order.products">
+          <ul class="orders">
+            <li class="orders__item">
+              <h1>Order - # {{ item.product._id }}</h1>
+              <ul class="orders__products">
+                <li class="orders__products-item">
+                  {{ item.product.title }} - {{ item.quantity | number }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #orderEmpty>
+      <div class="text-center">
+        <h1>No Order!</h1>
+      </div>
+    </ng-template>
+  </section>
+</div>

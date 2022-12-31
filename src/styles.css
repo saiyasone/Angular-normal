@@ -1,0 +1,17 @@
+.form-group {
+  margin-bottom: 0.6rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.page-500 {
+  max-width: 500px;
+  margin: 0 auto;
+}

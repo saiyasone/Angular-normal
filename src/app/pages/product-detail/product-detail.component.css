@@ -1,0 +1,21 @@
+.product-detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.product-container {
+  margin-bottom: 20px;
+}
+.product-container h2 {
+  font-size: 30px;
+}
+
+.product-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-container p {
+  font-size: 20px;
+}

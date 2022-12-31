@@ -1,0 +1,42 @@
+<div class="card mb-4">
+  <div class="icons">
+    <!-- *ngIf="userId === product.userId._id"  -->
+    <ng-container *ngIf="isAuthenticated">
+      <div *ngIf="userId === product.userId._id" class="icon">
+        <button (click)="onEdit(product._id)" class="btn btn-success me-2">
+          <i class="fas fa-pen"></i>
+        </button>
+        <button (click)="onDel(product._id)" class="btn btn-danger">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </ng-container>
+    <img
+      class="card-img-top"
+      [src]="imgPath + product.imageUrl"
+      [alt]="product.title"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-title">
+      <strong>${{ product.price | number }}</strong>
+    </p>
+    <p class="card-text">
+      {{ product.note }}
+    </p>
+    <div class="d-flex align-items-center">
+      <a
+        [routerLink]="'/product/' + product._id"
+        class="card-link btn btn-outline-success"
+        >detail</a
+      >
+      <a
+        *ngIf="isAuthenticated"
+        (click)="AddCart(product._id)"
+        class="card-link btn btn-outline-primary"
+        >add to cart</a
+      >
+    </div>
+  </div>
+</div>
